@@ -27,8 +27,8 @@ test('isEmail with correct email test@mydomain.com', () => {
   expect(functions.isEmail('test@mydomain.com')).toBe(true);
 });
 
-test('isEmail with correct email test.blah@emailprovider.org', () => {
-  expect(functions.isEmail('test.blah@emailprovider.org')).toBe(true);
+test('isEmail with correct email test@emailprovider.org', () => {
+  expect(functions.isEmail('test@emailprovider.org')).toBe(true);
 });
 
 test('isEmail with incorrect email @abcd.com', () => {
@@ -40,34 +40,52 @@ test('isEmail with incorrect email testwrong@domain.123', () => {
 });
 
 // test isStrongPassword()
-test('isStrongPassword with correct password Qader2', () => {
-    expect(functions.isEmail('Qader2')).toBe(true);
-  });
-test('isStrongPassword with correct password 4563@dhf', () => {
-    expect(functions.isEmail('')).toBe(true);
+test('isStrongPassword with correct password f3DWd', () => {
+    expect(functions.isStrongPassword('f3DWd')).toBe(true);
   });
 
-test('isStrongPassword with correct password ', () => {
-    expect(functions.isEmail('')).toBe(false);
+test('isStrongPassword with correct password fcSD822', () => {
+    expect(functions.isStrongPassword('fcSD822')).toBe(true);
+  });
+
+test('isStrongPassword with incorrect password 001', () => {
+    expect(functions.isStrongPassword('001')).toBe(false);
 });
 
-test('isStrongPassword with correct password ', () => {
-    expect(functions.isEmail('')).toBe(false);
+test('isStrongPassword with incorrect password 123467fgbsnjsnxsqqd', () => {
+    expect(functions.isStrongPassword('123467fgbsnjsnxsqqd')).toBe(false);
 });
 
 // test isDate()
-test('isDate with correct date ', () => {
-  expect(functions.isDate('')).toBe(true);
+test('isDate with correct date 2/3/1999', () => {
+  expect(functions.isDate('2/3/1999')).toBe(true);
 });
 
-test('isDate with correct date ', () => {
-  expect(functions.isDate('')).toBe(true);
+test('isDate with correct date 04/13/3021', () => {
+  expect(functions.isDate('04/13/3021')).toBe(true);
 });
 
-test('isDate with incorrect date ', () => {
-  expect(functions.isDate('')).toBe(true);
+test('isDate with incorrect date 3/9/21', () => {
+  expect(functions.isDate('3/9/21')).toBe(false);
 });
 
-test('isDate with incorrect date ', () => {
-  expect(functions.isDate('')).toBe(true);
+test('isDate with incorrect date 02241389', () => {
+  expect(functions.isDate('02241389')).toBe(false);
+});
+
+// test isHexColor()
+test('isHexColor with correct hex color #95A5A6', () => {
+  expect(functions.isHexColor('#95A5A6')).toBe(true);
+});
+
+test('isHexColor with correct hex color #1FDA', () => {
+  expect(functions.isHexColor('#1FDAE6')).toBe(true);
+});
+
+test('isHexColor with incorrect hex color 1FDAE', () => {
+  expect(functions.isHexColor('1FDAE')).toBe(false);
+});
+
+test('isHexColor with incorrect hex color (31, 218, 230)', () => {
+  expect(functions.isHexColor('(31, 218, 230)')).toBe(false);
 });
