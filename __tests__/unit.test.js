@@ -40,10 +40,10 @@ test('isEmail with incorrect email testwrong@domain.123', () => {
 });
 
 // test isStrongPassword()
-test('isStrongPassword with correct password ', () => {
-    expect(functions.isEmail('')).toBe(true);
+test('isStrongPassword with correct password Qader2', () => {
+    expect(functions.isEmail('Qader2')).toBe(true);
   });
-test('isStrongPassword with correct password ', () => {
+test('isStrongPassword with correct password 4563@dhf', () => {
     expect(functions.isEmail('')).toBe(true);
   });
 
